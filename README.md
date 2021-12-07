@@ -2,8 +2,7 @@
 ios 弹框动画
 集成basepopview,设置popstyle,dissmissStyle, addview,调show方法即可
 
-
-   TestPopView * popView = [[TestPopView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
+ TestPopView * popView = [[TestPopView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
    popView.backgroundColor = [UIColor redColor];
     
    //根据需要设置不同的弹出动画
