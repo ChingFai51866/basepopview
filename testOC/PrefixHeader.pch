@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  testOC
+//
+//  Created by mac on 2021/10/26.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define SCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREENHEIGHT ([UIScreen mainScreen].bounds.size.height)
+//#define iPhoneXStyle ((SCREENWIDTH == 375.f && SCREENHEIGHT == 812.f ? YES : NO) || (SCREENWIDTH == 414.f && SCREENHEIGHT == 896.f ? YES : NO))
+#define iPhoneXStyle \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+#define NavigationBarHEIGHT (iPhoneXStyle ? 88 : 64)
+#define TabBarHEIGHT (iPhoneXStyle ? 83 : 49)
+#define SafeBottomHEIGHT (iPhoneXStyle ? 34 : 0)
+#define Screen_BiLi ([UIScreen mainScreen].bounds.size.width)/375
+#define PT ([UIScreen mainScreen].bounds.size.width)/375
+#define StatusBar_HEIGHT (iPhoneXStyle ? 44 : 20)
+#define Segment_HEIGHT 35
+#define AppCurrentVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+//uuid
+
+#endif /* PrefixHeader_pch */
